@@ -5,3 +5,11 @@
     flex-direction: column;
     width: 400px;
 }
+
+.radio{
+    width: 55px;
+    height:55px;
+    border-radius: 100%;
+    margin: 0 auto;
+    background-color: hsl(150, 100%, 66%);
+}

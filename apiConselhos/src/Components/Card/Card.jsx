@@ -8,7 +8,7 @@ function Card() {
     <div className={S.card}>
         <h1 className={S.titulo}>Advice #</h1>
         <p className={S.text}></p>
-        <button type='radio' className={S.radio}>Enviar</button>
+        <button type='radio' className={S.radio}><img src="../../src/assets/button.svg" alt="" /></button>
     </div>
   )
 }
