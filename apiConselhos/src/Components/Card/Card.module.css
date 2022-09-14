@@ -1,0 +1,7 @@
+.card{
+    background-color: hsl(217, 19%, 38%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
