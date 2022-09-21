@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 400px;
+    width: 500px;
+    height: 300px;
 }
 
 .radio{
@@ -12,4 +13,20 @@
     border-radius: 100%;
     margin: 0 auto;
     background-color: hsl(150, 100%, 66%);
+    margin-top: 15px;
+    border: hsl(150, 100%, 66%);
+}
+
+.titulo{
+    font-family: 'manrope';
+    font-size: 28px;
+    text-align: center;
+    color:  hsl(150, 100%, 66%);
+}
+
+.text{
+    font-family: 'manrope';
+    font-size: 18px;
+    text-align: center;
+    color:white;
 }
