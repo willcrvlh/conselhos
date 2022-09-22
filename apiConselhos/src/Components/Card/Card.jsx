@@ -2,29 +2,35 @@ import React from "react";
 import S from "./Card.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
+
 
 function Card() {
   const [conselho, setConselho] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://api.adviceslip.com/advice")
-      .then((response) => {
-        setConselho(response.data);
-      })
-      .catch(() => {
-        console.log("deu merda");
-      });
-  }, []);
+
+  async function handleRequisicao(){
+    const url = `https://api.adviceslip.com/advice`
+    const response = await fetch(url)
+    const json = await response.json()
+    
+    const resposta = {
+      numero : json.slip.id,
+      conselho: json.slip.advice
+    }
+    setConselho(resposta)
+  }
   
+  useEffect(() =>{
+    handleRequisicao()
+  },[])
   return (
       <div className={S.card}>
-      <h1 className={S.titulo}>Advice #</h1>
-      <p className={S.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quas iusto fuga impedit, natus odit ut consequatur veniam eum cum esse odio quidem perferendis saepe labore? Suscipit consequuntur magni quidem.</p>
+      <h1 className={S.titulo}>Advice #{!!conselho ? conselho.numero: ''}</h1>
+      <p className={S.text}>{!!conselho ? conselho.conselho : ''}</p>
       <img src="../../src/assets/division.svg" alt="" />
-      <button type="radio" className={S.radio}>
+      <button type="radio" className={S.radio} onClick={handleRequisicao}>
         <img src="../../src/assets/button.svg" alt="" />
       </button>
+      
     </div>
   );
 }
