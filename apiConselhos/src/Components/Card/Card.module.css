@@ -16,6 +16,7 @@
     background-color: hsl(150, 100%, 66%);
     margin-top: 15px;
     border: hsl(150, 100%, 66%);
+    cursor: pointer;
 }
 
 .titulo{
